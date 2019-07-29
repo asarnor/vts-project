@@ -1,0 +1,84 @@
+<div class="container-fluid accordin-component">
+  <mat-accordion #accordion="matAccordion" multi="false">
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <strong> All Cameras</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- utilities: Not Signed -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="table-section">
+        <table class="table table-sm table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>DeviceNo</th>
+              <th>Id</th>
+              <th>Available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of allCameras">
+              <td>{{ item.Name }}</td>
+              <td>{{ item.DeviceNo }}</td>
+              <td>{{ item.Id }}</td>
+              <td>
+                <ng-container>
+                  <a>
+                    <i class="fa fa-check green fa-lg" aria-hidden="true" *ngIf="isAvailableCamera(item.Id)"></i>
+                    <i class="fa fa-times red fa-lg" aria-hidden="true" *ngIf="!isAvailableCamera(item.Id)"></i>
+                  </a>
+                  <br />
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <strong>All Vehicles</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- utilities: Signed -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="table-section">
+        <table class="table table-sm table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Id</th>
+              <th>Available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of allVehicles">
+              <td>{{ item.Name }}</td>
+              <td>{{ item.Description }}</td>
+              <td>{{ item.Id }}</td>
+              <td>
+                <ng-container>
+                  <a>
+                    <i class="fa fa-check green fa-lg" aria-hidden="true" *ngIf="isAvailableVehicle(item.Id)"></i>
+                    <i class="fa fa-times red fa-lg" aria-hidden="true" *ngIf="!isAvailableVehicle(item.Id)"></i>
+                  </a>
+                  <br />
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <hr />
+  <span routerLink="/" title="New Form" class="float">
+    <i class="fa fa-plus my-float"></i>
+  </span>
+</div>

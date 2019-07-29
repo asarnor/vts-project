@@ -1,0 +1,3 @@
+interface SimpleState {
+  todos: any[];
+}
