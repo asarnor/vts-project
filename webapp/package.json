@@ -73,7 +73,7 @@
     "document-register-element": "1.11.0",
     "helpful-decorators": "1.7.2",
     "iv-viewer": "^2.0.1",
-    "lodash": "4.17.11",
+    "lodash": "4.17.13",
     "moment": "^2.24.0",
     "ng2-image-viewer": "^3.0.4",
     "ngx-auto-unsubscribe": "2.4.1",
